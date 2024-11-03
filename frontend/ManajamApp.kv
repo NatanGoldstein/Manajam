@@ -1,0 +1,18 @@
+#:include frontend/OpenScreen.kv
+#:include frontend/MusicianSignup.kv
+#:include frontend/MainScreen.kv
+#:include frontend/AppDefaults.kv
+
+
+WindowManager:
+    canvas.before:
+        Color:
+            rgba: (245/255,222/255,179/255,1)
+        Rectangle:
+            size:self.size
+            pos:self.pos
+    MainScreen:
+    OpenScreen:
+    MusicianSignup:
+    
+

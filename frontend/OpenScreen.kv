@@ -1,0 +1,79 @@
+#:include frontend/AppDefaults.kv
+
+<OpenScreen>
+    name:'open_screen'
+    canvas.before:
+        Color:
+            rgba: (245/255,222/255,179/255,1)
+        Rectangle:
+            size:self.size
+            pos:self.pos
+    FloatLayout:
+        size: root.width, root.height
+        Image:
+            source: 'assets\images\guitarbg.png'
+            pos_hint: {'center_x':.03, 'center_y':.5}
+        Label:
+            pos_hint:{'x':-.1, 'y':0.25}
+            font_name:'Roboto'
+            text: 'Welcome to'
+            font_size: '22sp'
+            color: 'black'
+        Label:
+            pos_hint:{'x':0.25, 'y':0.25}
+            font_name:'Roboto'
+            text: 'Manajam'
+            bold:True
+            font_size: '22sp'
+            color: 'black'
+        
+        DefaultText:
+            id: email_input
+            hint_text: 'Email'
+            font_size: '25sp'
+            pos_hint: {'x':0.4, 'y':0.4}
+            size_hint: .5,.065
+            canvas.after:
+                Color: 
+                    rgba:(140/255,140/255,140/255,1)
+                Line:
+                    points: (self.x, self.y + 30, self.x + self.width, self.y + 30)
+                    width:1.0
+                    bezier:(self.x,self.center_y, self.right, self.center_y)
+                       
+        DefaultText:
+            id: password_input
+            hint_text: 'Password'
+            font_size: '25sp'
+            pos_hint: {'x':0.4, 'y':0.34}
+            size_hint: .5,.065 
+            canvas.after:
+                Color: 
+                    rgba:(140/255,140/255,140/255,1)
+                Line:
+                    points: (self.x, self.y + 30, self.x + self.width, self.y + 30)
+                    width:1.0
+                    bezier:(self.x,self.center_y, self.right, self.center_y)
+                                 
+        DefaultButton:
+            text: 'Log In'
+            pos_hint: {'x':0.4, 'y':0.27}
+            size_hint: .5,.065
+            on_press:
+                root.logIn(email_input.text, password_input.text)
+
+        Label:
+            text: 'Dont have an account?'
+            font_name: './assets/fonts/aldhabi'
+            pos_hint: {'x':0.42, 'y':0.17}
+            size_hint: .5,.065
+            font_size: '25sp'
+            color: 'grey'
+
+        DefaultButton:
+            text: 'Sign Up'
+            pos_hint: {'x':0.415, 'y':0.108}
+            size_hint: .5,.065
+            on_release: 
+                app.root.current = 'musician_signup'
+                app.root.transition.direction = 'left'

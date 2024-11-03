@@ -1,0 +1,35 @@
+<MapScreen>:
+    name: 'map_screen'
+    FloatLayout:
+        MapView:
+            size_hint: 1,1
+            lat: root.current_lat  # Use the current latitude
+            lon: root.current_lon  # Use the current longitude
+            zoom: 12  # Adjust the zoom level as needed
+
+        SubHeader:
+            size_hint_x: .85
+            size_hint_y: .05
+            pos_hint: {'x': .075, 'y': .9}
+            canvas.before:
+                Color:
+                    rgba: 0, 0, 0, 0.1  # Black color with 20% opacity for shadow
+                RoundedRectangle:
+                    pos: self.x + 4, self.y - 7  # Offset for shadow
+                    size: self.width + 3, self.height + 6  # Slightly larger than the input box
+                    radius: [30]
+                Color:
+                    rgba: 250/255,237/255,214/255,1  
+                RoundedRectangle:
+                    pos: self.pos
+                    size: self.size
+                    radius: [30]  # Corner radius
+        
+        DefaultText:
+            pos_hint: {'x': .09, 'y': .87}
+            hint_text: 'Search'
+
+        Image:
+            source: "./assets/images/search.png"
+            pos_hint: {'x': .37, 'y': .425}
+        

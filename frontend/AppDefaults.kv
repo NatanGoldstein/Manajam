@@ -1,0 +1,81 @@
+<DefaultLabel>:
+    name: 'DefaultLabel'
+    size_hint_y: None
+    height: self.texture_size[1]
+    text_size: self.width, None
+    font_size: '45sp'
+    font_name: 'Arial'
+    padding: 0, 10
+    color: 'black'
+
+<SubHeader>:
+    name: 'SubHeader'
+    size_hint_y: None
+    height: self.texture_size[1]
+    text_size: self.width, None
+    font_size: '20sp'
+    font_name: './assets/fonts/aldhabi'
+    padding: 0
+    spacing: 0
+    color: 'black'
+    align_horizontal: 'center'
+    align_vertical: 'center'
+
+<DefaultText>:
+    name: 'DefaultText'
+    color: 0, 0, 0, 1
+    size_hint_y:None
+    size_hint_x: 1
+    background_color:(0,0,0,0)
+    font_name:'./assets/fonts/aldhabi'
+    font_size: '20sp'
+    align_horizontal: 'center'
+    align_vertical: 'center'
+    cursor_color: 0, 0, 0, 1  # Black color
+    cursor_width: 1  # Thin curso
+
+
+<DefaultSpinnerOption>:
+    background_normal: ''
+    background_color: 250/255,237/255,214/255,1
+    halign: 'left'
+    color: 'black'
+    font_name:'./assets/fonts/aldhabi'
+    font_size: '20sp'
+    size_hint_y: None   # Disable proportional height and use explicit height
+    height: dp(30)
+    canvas.after:
+        Color:
+            rgba: 0.5, 0.5, 0.5, 1  # Light grey color for the line
+        Line:
+            points: self.x, self.y, self.right, self.y  # Draw a line at the bottom of each option
+            width: 1.2 
+
+<DefaultSpinner>:
+    name: 'DefaultSpinner'
+    size_hint_y:None
+    text_size: self.width, None
+    padding_x: 1
+    option_cls: 'DefaultSpinnerOption'
+    background_color:(0,0,0,0)
+    font_name:'./assets/fonts/aldhabi'
+    font_size: '20sp'
+    halign: 'left'
+
+<DefaultButton>:
+    size_hint_y: None
+    size_hint_x: .5
+    height: 100
+    color:(245/255,222/255,179/255,1)
+    font_name: "./assets/fonts/Baguet Script Regular"
+    font_size: '20sp'
+    background_color:(0,0,0,0)
+    canvas.before:
+        Color:
+            rgba: (0,0,0,1)
+        RoundedRectangle:
+            size:self.size
+            pos:self.pos
+            radius:[15]
+
+

@@ -1,0 +1,278 @@
+#:include frontend/AppDefaults.kv
+
+<MusicianSignup>:
+    name: 'musician_signup'
+    FloatLayout:
+                
+        Image:
+            source: "./assets/images/goback.png"
+            size_hint: .12, .12
+            pos_hint: {'x': .04, 'y': .87}
+
+        Button:
+            background_color: 1,1,1,0
+            size_hint: .15, .1
+            pos_hint: {'x': .02, 'y': .88}
+            on_press: 
+                app.root.current = 'open_screen'
+                app.root.transition.direction = 'right'
+
+        Label:
+            text: "Sign up"
+            color: 'black'
+            font_size: '30sp'
+            bold: True
+            font_name: "./assets/fonts/Baguet Script Regular"
+            size_hint_y: 0.1  # Fix header size
+            pos_hint: {'x': .01, 'y': .88}
+
+        MDScrollView:
+            do_scroll_x: False
+            scroll_y: 1
+            pos_hint: {'x': 0, 'y': -.15}
+
+            MDBoxLayout:
+                orientation: 'vertical'
+                size_hint_y: 2
+
+                FloatLayout:
+                    size_hint: 1,1
+
+                    Image:
+                        source: "./assets/images/personal_info.png"
+                        size_hint: .12, .12
+                        pos_hint: {'x': .32, 'y': .91}
+
+                    SubHeader:
+                        text: "Personal info"                  
+                        pos_hint: {'x': .44, 'y': .96}
+                        size_hint_x: 1
+                              
+                    DefaultText:
+                        size_hint_x: .95
+                        size_hint_y: .13
+                        pos_hint: {'x': .025, 'y': .81}
+                        canvas.before:
+                            Color:
+                                rgba: 250/255,237/255,214/255,1  
+                            RoundedRectangle:
+                                pos: self.pos
+                                size: self.size
+                                radius: [70]  # Corner radius
+                            Color:
+                                rgba: 0.5, 0.5, 0.5, 1  # Gray color
+                            Rectangle:
+                                pos: self.x, self.y + self.height / 4 - 1  # Adjust y position as needed
+                                size: self.width, 2  # Width and height of the line
+                            Color:
+                                rgba: 0.5, 0.5, 0.5, 1  # Gray color
+                            Rectangle:
+                                pos: self.x, self.y + self.height / 2   # Adjust y position as needed
+                                size: self.width, 2  # Width and height of the line
+                            Color:
+                                rgba: 0.5, 0.5, 0.5, 1  # Gray color
+                            Rectangle:
+                                pos: self.x, self.y + 3*self.height / 4   # Adjust y position as needed
+                                size: self.width, 2  # Width and height of the line
+
+                    DefaultText:
+                        id: first_name
+                        hint_text: 'First name'
+                        pos_hint: {'x': .06, 'y': .895}
+
+                    DefaultText:
+                        id: last_name
+                        hint_text: 'Last name'
+                        pos_hint: {'x': .06, 'y': .865}
+
+                    DefaultText:
+                        id: age
+                        hint_text: 'Age'
+                        pos_hint: {'x': .06, 'y': .835}
+
+                    DefaultSpinner:
+                        id: gender
+                        text: 'Gender'
+                        pos_hint: {'x': .06, 'y': .805}
+                        size_hint_x: .8
+                        values: ["Male", "Female", "Other"]
+
+                    Image:
+                        source: "./assets/images/account.png"
+                        size_hint: .09, .09
+                        pos_hint: {'x': .32, 'y': .73}
+
+                    SubHeader:
+                        text: "Account"                  
+                        pos_hint: {'x': .44, 'y': .765}
+                        size_hint_x: 1
+                              
+                    DefaultText:
+                        size_hint_x: .95
+                        size_hint_y: .0975
+                        pos_hint: {'x': .025, 'y': .645}
+                        canvas.before:
+                            Color:
+                                rgba: 250/255,237/255,214/255,1  
+                            RoundedRectangle:
+                                pos: self.pos
+                                size: self.size
+                                radius: [70]  # Corner radius
+                            Color:
+                                rgba: 0.5, 0.5, 0.5, 1  # Gray color
+                            Rectangle:
+                                pos: self.x, self.y + 2 * self.height / 3 - 1  # Adjust y position as needed
+                                size: self.width, 2  # Width and height of the line
+                            Color:
+                                rgba: 0.5, 0.5, 0.5, 1  # Gray color
+                            Rectangle:
+                                pos: self.x, self.y + self.height / 3   # Adjust y position as needed
+                                size: self.width, 2  # Width and height of the line
+
+                    DefaultText:
+                        id: email
+                        hint_text: 'Email'
+                        pos_hint: {'x': .06, 'y': .695}
+
+                    DefaultText:
+                        id: password
+                        hint_text: 'Password'
+                        pos_hint: {'x': .06, 'y': .665}
+
+                    DefaultText:
+                        id: verify_pass
+                        hint_text: 'Verify Password'
+                        pos_hint: {'x': .06, 'y': .635}
+
+                    Image:
+                        source: "./assets/images/address.png"
+                        size_hint: .09, .09
+                        pos_hint: {'x': .32, 'y': .555}
+
+                    SubHeader:
+                        text: "Address"                  
+                        pos_hint: {'x': .44, 'y': .59}
+                        size_hint_x: 1
+                              
+                    DefaultText:
+                        size_hint_x: .95
+                        size_hint_y: .0975
+                        pos_hint: {'x': .025, 'y': .47}
+                        canvas.before:
+                            Color:
+                                rgba: 250/255,237/255,214/255,1  
+                            RoundedRectangle:
+                                pos: self.pos
+                                size: self.size
+                                radius: [70]  # Corner radius
+                            Color:
+                                rgba: 0.5, 0.5, 0.5, 1  # Gray color
+                            Rectangle:
+                                pos: self.x, self.y + 2 * self.height / 3 - 1  # Adjust y position as needed
+                                size: self.width, 2  # Width and height of the line
+                            Color:
+                                rgba: 0.5, 0.5, 0.5, 1  # Gray color
+                            Rectangle:
+                                pos: self.x, self.y + self.height / 3   # Adjust y position as needed
+                                size: self.width, 2  # Width and height of the line
+
+                    DefaultText:
+                        id: country
+                        hint_text: 'Country'
+                        pos_hint: {'x': .06, 'y': .52}
+
+                    DefaultText:
+                        id: city
+                        hint_text: 'City'
+                        pos_hint: {'x': .06, 'y': .49}
+
+                    DefaultText:
+                        id: street_ap
+                        hint_text: 'Street, Apartment'
+                        pos_hint: {'x': .06, 'y': .46}
+
+                    Image:
+                        source: "./assets/images/music.png"
+                        size_hint: .12, .12
+                        pos_hint: {'x': .26, 'y': .37}
+
+                    SubHeader:
+                        text: "Musical background"                  
+                        pos_hint: {'x': .38, 'y': .42}
+                        size_hint_x: 1
+                              
+                    DefaultText:
+                        size_hint_x: .95
+                        size_hint_y: .13
+                        pos_hint: {'x': .025, 'y': .27}
+                        canvas.before:
+                            Color:
+                                rgba: 250/255,237/255,214/255,1  
+                            RoundedRectangle:
+                                pos: self.pos
+                                size: self.size
+                                radius: [70]  # Corner radius
+                            Color:
+                                rgba: 0.5, 0.5, 0.5, 1  # Gray color
+                            Rectangle:
+                                pos: self.x, self.y + self.height / 4 - 1  # Adjust y position as needed
+                                size: self.width, 2  # Width and height of the line
+                            Color:
+                                rgba: 0.5, 0.5, 0.5, 1  # Gray color
+                            Rectangle:
+                                pos: self.x, self.y + self.height / 2   # Adjust y position as needed
+                                size: self.width, 2  # Width and height of the line
+                            Color:
+                                rgba: 0.5, 0.5, 0.5, 1  # Gray color
+                            Rectangle:
+                                pos: self.x, self.y + 3*self.height / 4   # Adjust y position as needed
+                                size: self.width, 2  # Width and height of the line
+
+                    DefaultSpinner:
+                        id: primary_inst
+                        text: 'Primary Instrument'
+                        pos_hint: {'x': .06, 'y': .355}
+                        size_hint_x: .8
+                        values: ["Guitar", "Bass", "Drums", "Brass", "Vocals", "Strings"]
+
+                    DefaultSpinner:
+                        id: second_inst
+                        text: 'Secondary Instrument'
+                        pos_hint: {'x': .06, 'y': .325}
+                        size_hint_x: .8
+                        values: ["Guitar", "Bass", "Drums", "Brass", "Vocals", "Strings", "Ethnic"]
+
+                    DefaultSpinner:
+                        id: genre
+                        text: 'Favorite Genre'
+                        pos_hint: {'x': .06, 'y': .295}
+                        size_hint_x: .8
+                        values: ["Rock", "Pop", "Classic", "Jazz", "Techno", "Ethnic"]
+
+                    DefaultSpinner:
+                        id: level
+                        text: 'Level'
+                        pos_hint: {'x': .06, 'y': .265}
+                        size_hint_x: .8
+                        values: ["Begginer", "Intermediate", "Pro"]
+
+
+                    Button:
+                        text: "Submit"
+                        size_hint_y: None
+                        size_hint_x: .5
+                        pos_hint: {'x': .25, 'y': .2}
+                        height: 100
+                        color:(245/255,222/255,179/255,1)
+                        font_name: "./assets/fonts/Baguet Script Regular"
+                        font_size: '20sp'
+                        background_color:(0,0,0,0)
+                        canvas.before:
+                            Color:
+                                rgba: (0,0,0,1)
+                            RoundedRectangle:
+                                size:self.size
+                                pos:self.pos
+                                radius:[15]
+                        on_press:
+                            root.signUp()

@@ -1,0 +1,44 @@
+#:include frontend/MapScreen.kv
+#:include frontend/UserScreen.kv
+#:include frontend/BandsScreen.kv
+#:include frontend/TasksScreen.kv
+
+<MainScreen>
+    name:'main_screen'
+
+    MDBottomNavigation:
+        panel_color: 250/255,237/255,214/255,1
+        panel_height: dp(70)
+
+        MDBottomNavigationItem:
+            name: 'map'
+            icon: './assets/images/map.png'
+            on_tab_press: root.ids.indicator.pos_hint = {'center_x': .1, 'y': 0}  
+            MapScreen:
+
+        MDBottomNavigationItem:
+            name: 'bands'
+            icon: './assets/images/bands.png'  
+            BandsScreen:
+
+        MDBottomNavigationItem:
+            name: 'tasks'
+            icon: './assets/images/tasks.png'  
+            TasksScreen:
+
+        MDBottomNavigationItem:
+            name: 'user'
+            icon: './assets/images/user.png'  
+            UserScreen:
+
+    DefaultText:
+        id: indicator
+        size_hint_x: .95
+        size_hint_y: .13
+        pos_hint: {'x': .025, 'y': .81}
+        canvas.before:
+            Color:
+                rgba: 0, 0, 0, 1  # Black color for the indicator
+            Rectangle:
+                size: self.parent.width / 4, 4
+        
