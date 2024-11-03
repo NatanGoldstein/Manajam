@@ -24,7 +24,7 @@ class WindowManager(MDScreenManager):
 class manajam(MDApp):
     def build(self):
         # Load the KV file after app initialization
-        self.root = Builder.load_file('frontend/ManajamApp.kv')
+        self.root = Builder.load_file('frontend/ScreenManager.kv')
         return self.root
     
 if __name__ == "__main__":
