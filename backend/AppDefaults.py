@@ -1,3 +1,4 @@
+from kivy.uix.floatlayout import FloatLayout
 from kivy.uix.label import Label
 from kivy.uix.textinput import TextInput
 from kivy.uix.spinner import Spinner, SpinnerOption
@@ -24,4 +25,10 @@ class DefaultSpinner(Spinner):
         self.color = 'black'  # Set the color to black
 
 class DefaultSpinnerOption(SpinnerOption):
+    pass
+
+class SearchFilter(Spinner):
+    pass
+
+class SearchFilterWidget(FloatLayout):
     pass

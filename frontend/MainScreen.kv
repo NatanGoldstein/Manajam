@@ -13,7 +13,6 @@
         MDBottomNavigationItem:
             name: 'map'
             icon: './assets/images/map.png'
-            on_tab_press: root.ids.indicator.pos_hint = {'center_x': .1, 'y': 0}  
             MapScreen:
 
         MDBottomNavigationItem:
@@ -31,14 +30,5 @@
             icon: './assets/images/user.png'  
             UserScreen:
 
-    DefaultText:
-        id: indicator
-        size_hint_x: .95
-        size_hint_y: .13
-        pos_hint: {'x': .025, 'y': .81}
-        canvas.before:
-            Color:
-                rgba: 0, 0, 0, 1  # Black color for the indicator
-            Rectangle:
-                size: self.parent.width / 4, 4
+
         

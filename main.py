@@ -6,6 +6,7 @@ from kivy.core.window import Window
 from kivy.lang.builder import Builder
 from kivy_garden.mapview import MapView
 import geocoder
+from kivy.uix.screenmanager import FadeTransition
 from kivymd.uix.screenmanager import MDScreenManager
 from ctypes import windll, c_int64
 
@@ -18,7 +19,11 @@ Window.clearcolor = (245/255,222/255,179/255,1)
 
 
 class WindowManager(MDScreenManager):
-    pass
+    def go_to_search_screen(self):
+        self.transition = FadeTransition()
+        self.transition.duration = 0.1
+        self.transition.clearcolor = (245/255,222/255,179/255,1)
+        self.current = 'search_screen'
        
 
 class manajam(MDApp):

@@ -19,17 +19,24 @@
                     size: self.width + 3, self.height + 6  # Slightly larger than the input box
                     radius: [30]
                 Color:
-                    rgba: 250/255,237/255,214/255,1  
+                    rgba: 250/255,237/255,214/255,1
                 RoundedRectangle:
                     pos: self.pos
                     size: self.size
                     radius: [30]  # Corner radius
-        
+
         DefaultText:
+            id: search_text
             pos_hint: {'x': .09, 'y': .87}
             hint_text: 'Search'
+            on_focus:
+                search_text.focus = False
+                app.root.go_to_search_screen()
 
         Image:
             source: "./assets/images/search.png"
             pos_hint: {'x': .37, 'y': .425}
         
+
+
+

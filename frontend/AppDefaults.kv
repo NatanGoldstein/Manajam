@@ -78,4 +78,33 @@
             pos:self.pos
             radius:[15]
 
+<SearchFilter>:
+    name: 'search_filter'
+    size_hint_y:None
+    pos_hint: {'x': .25}
+    text_size: self.width, None
+    color: 'black'
+    option_cls: 'DefaultSpinnerOption'
+    background_color:(0,0,0,0)
+    font_name:'./assets/fonts/aldhabi'
+    font_size: '20sp'
+
+<SearchFilterWidget>:
+    size_hint_x: None
+    size_hint_y: .25
+    width: 300
+    canvas.before:
+        Color:
+            rgba: 250/255,237/255,214/255,1
+        RoundedRectangle:
+            pos: self.pos[0] , self.pos[1] + 15
+            size: self.size
+            radius: [33]  # Corner radius
+    SearchFilter:
+    Image:
+        source: "./assets/images/goDown.png"
+        size_hint: .7,.7
+        pos_hint: {'right': 1.2, 'y': .3}
+
+
 
