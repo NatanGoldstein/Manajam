@@ -52,8 +52,6 @@ class SearchScreen(MDScreen):
                 self.search_result += f"{row['First']} {row['Last']}"
 
 
-
-
 class BandsScreen(MDScreen):
     pass
 

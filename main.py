@@ -8,9 +8,6 @@ from kivy_garden.mapview import MapView
 import geocoder
 from kivy.uix.screenmanager import FadeTransition
 from kivymd.uix.screenmanager import MDScreenManager
-from ctypes import windll, c_int64
-
-windll.user32.SetProcessDpiAwarenessContext(c_int64(-4))
 
 
 Window.size = (310, 580)
